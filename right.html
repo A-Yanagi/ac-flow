@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style1.css">
+        <style>
+          .table-container {
+  overflow-x: auto;
+}
+
+.table-x{
+  min-width:100px;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: auto;
+}
+
+.table-title{
+  background-color: rgb(172, 172, 205);
+  font-weight: bold;
+  text-align: center;
+}
+
+.top{
+  background-color: rgb(172, 172, 205);
+  text-decoration: underline;
+}
+
+.ad{
+  background-color: rgb(184, 109, 109);
+  font-weight: bold;
+}
+
+.ng{
+  background-color: rgb(137, 172, 224);
+  font-weight: bold;
+}
+
+.line{
+  background-image: linear-gradient(to top left,
+  transparent, transparent 49%,
+    black 49%,
+    black 51%,   /* 線の太さ */
+  transparent 51%, transparent);
+}
+
+.tips{
+  position: absolute;
+  visibility:hidden;
+  background-color: rgba(137, 172, 224, 0.872);
+  margin-left:1%;
+  padding:1em;
+  font-size:12px;
+  top:0px;
+}
+        </style>
+    </head>
+<body>
+    <section>    
+        <div id="table-container">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th></th>
+                <th class="top" colspan="2"><span onmouseover="showTips(event, 'con');" onmouseout="hideTips('con');">
+                const</th></span>
+                  <span id = "con" class="tips">
+                  AFF: 現状に問題があり、論題のプランによってそれが解決すること、それが重要であることを示す
+                  <br>
+                  NEG: 現状問題が起きていないが、論題のプランによって問題が発生すること、それが深刻であることを示す
+                  </span>
+                <th class="top"><span onmouseover="showTips(event, 'que');" onmouseout="hideTips('que');">
+                  question</th></span>
+                  <span id = "que" class="tips">
+                    聞き取れなかった部分の確認や、証拠の確認、言葉の定義の確認を行う
+                    </span>
+                <th class="top"><span onmouseover="showTips(event, 'att');" onmouseout="hideTips('att');">
+                  attack</th></span>
+                  <span id = "att" class="tips">
+                    AFFに対して: constに対して、現状の問題は深刻ではない、問題は生じない、あまり重要でないといった反論を行う
+                    <br>
+                    NEGに対して: constに対して、現状でも同様の問題がある、プランの効果は小さい、あまり重要ではないといった反論を行う
+                    </span>
+                <th class="top"><span onmouseover="showTips(event, 'def');" onmouseout="hideTips('def');">
+                  defense</th></span>
+                  <span id = "def" class="tips">
+                    attackを上回る再反論で自分の論を守る。このときに新しい論点を追加するのは「new argument」と呼ばれる反則行為になる
+                    </span>
+                <th class="top"><span onmouseover="showTips(event, 'sum');" onmouseout="hideTips('sum');">
+                summary</th></span>
+                  <span id = "sum" class="tips">
+                  相手の議論が弱く、自分たちの議論が強いこと、総括して比較した際には自分たちが上回っていることを示す
+                  </span>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-x" rowspan="8" contenteditable="true"></td>
+                <td class="ad" rowspan="8">AFF</td>
+                <td class="table-title">AD1</td>
+                <td class="table-x" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="8" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Observation</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Process</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Impact</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">AD2</td>
+                <td class="table-x" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Observation</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Process<br/>effect</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Impact<br/>Importance</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="line" rowspan="8"></td>
+                <td class="ng" rowspan="8">NEG</td>
+                <td class="table-title">DA1</td>
+                <td class="table-x" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="8" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Observation</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Process</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Impact</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">DA2</td>
+                <td class="table-x" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+                <td class="table-x" rowspan="4" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Observation</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Process<br/>Effect</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+              <tr>
+                <td class="table-title">Impact<br/>Importance</td>
+                <td class="table-x" contenteditable="true"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <script>
+//表に入っている用語の説明
+function showTips(event, id) {
+   const tipsElement = document.getElementById(id);
+   if (tipsElement) {
+    tipsElement.style.visibility = 'visible';
+    // マウスの座標を取得し、tipsを表示する位置を調整
+    const x = event.clientX + window.pageXOffset;
+    const y = event.clientY + window.pageYOffset;
+    // 取得したidが'sum'の場合、tipsをマウスの左側に表示
+    if (id === 'sum') {
+                    tipsElement.style.left = x - tipsElement.offsetWidth + 'px';
+                } else {
+                    tipsElement.style.left = x + 'px';
+                }
+
+                tipsElement.style.top = y + 'px';
+            }
+    }
+
+function hideTips(id) {
+  const tipsElement = document.getElementById(id);
+  if (tipsElement) {
+    tipsElement.style.visibility = 'hidden';
+  }
+}
+
+//セルの設定
+document.addEventListener('DOMContentLoaded', function () {
+    const cells = document.querySelectorAll('.table-x');
+  
+    cells.forEach(cell => {
+      cell.addEventListener('input', function () {
+        adjustCellWidth(this);
+      });
+    });
+  
+    function adjustCellWidth(cell) {
+      const minWidth = parseInt(getComputedStyle(cell).minWidth);
+      const scrollWidth = cell.scrollWidth;
+  
+      if (scrollWidth > minWidth) {
+        cell.style.width = `${scrollWidth-80}px`;
+      } else {
+        cell.style.width = 'auto';
+      }
+    }
+  });
+      </script>
+      <script src="right_p.js"></script>
+</body>
+</html>

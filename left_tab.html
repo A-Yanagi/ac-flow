@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style1.css">
+    </head>
+<body>
+    <div class="tabs">
+        <div class="tab active" id="tab1" onclick="showTab('tab1')">用語辞書</div>
+        <div class="tab" id="tab2" onclick="showTab('tab2')">勝利判定ツール</div>
+      </div>
+      <section>
+        <div id="tab1-content" class="tab-content" style="display: none;">
+            <p>
+              <ul>
+                <li><b>論題</b>: ディベートにおいて議論するテーマ・議題のこと</li>
+                <li><b>AD</b>: Advantageの略。論題を実現した場合に発生する利点を2つほど挙げる</li>
+                <li><b>AFF</b>: Affirmative Sideの略</li>
+                <li><b>affirmative</b>: 論題に肯定的な立場</li>
+                <li><b>attack</b>: constructive speechに対して行う反論</li>
+                <li><b>const</b>: constructive speechの略</li>
+                <li><b>constructive speech</b>: 論題に対して自分の立場を表明するスピーチのこと</li>
+                <li><b>DA</b>: Disadvantageの略。論題を実現した場合に発生する欠点を2つほど挙げる</li>
+                <li><b>defense</b>: attackに対して行う再反論。自チームのADもしくはDAを強める</li>
+                <li><b>effect</b>: 論題の内容を実施したときにどのようなことが発生しうるかを示す</li>
+                <li><b>evidence</b>: 議論を強めるために使われる証拠。相手に求められた場合には提示しなければならない</li>
+                <li><b>flow sheet</b>: </li>
+                <li><b>importance</b>: その利点がどれほど重要か、もしくはその欠点がどれほど深刻かを提示する</li>
+                <li><b>NEG</b>: Negative Sideの略</li>
+                <li><b>negative</b>: 論題に否定的な立場</li>
+                <li><b>PLAN</b>: 論題に示された政策を具体的にどのように実行するかを提案するもの。肯定側の役割。</li>
+                <li><b>Preparation Time</b>: スピーチの間でとられる準備時間</li>
+                <li><b>present situation</b>: 論題のものを実施していない現状を提示する。PSとも</li>
+                <li><b>question</b>: 行われたスピーチに対して質問を行う。発言内容や言葉の定義について確認することが多い</li>
+                <li><b>source</b>: evidenceの情報源。個人ブログなどではなく、公的な資料の方が望ましいとされる</li>
+                <li><b>summary</b>: 行われた議論について自チームの立場からまとめる</li>
+              </ul>
+            </p>
+        </div>
+
+        <div id="tab2-content" class="tab-content" style="display: none;">
+            <div class="judge">
+            <strong style="color:rgb(184, 83, 83)">【Advantage】</strong>
+            <p style="display:flex;"><strong>もっともらしさ</strong>
+            <label>
+            <input type="radio" name="item1" class="radio" data-item="item1" data-stage="1"> 十分にある
+            </label>
+            <label>
+            <input type="radio" name="item1" class="radio" data-item="item1" data-stage="2"> 普通
+            </label>
+            <label>
+            <input type="radio" name="item1" class="radio" data-item="item1" data-stage="3"> 不足している
+            </label>
+            </p>
+            <p style="display:flex;"><strong>価値・重要性</strong>
+                <label>
+                  <input type="radio" name="item1_2" class="radio" data-item="item1_2" data-stage="1"> 十分にある
+                </label>
+                <label>
+                  <input type="radio" name="item1_2" class="radio" data-item="item1_2" data-stage="2"> 普通
+                </label>
+                <label>
+                  <input type="radio" name="item1_2" class="radio" data-item="item1_2" data-stage="3"> 不足している
+                </label>
+              </p>
+                <button id="calculateButton1" disabled>確認する</button>
+                <div id="result1"></div>
+            </div>
+            <div class="judge">
+                <strong style="color:rgb(95, 148, 228)">【Disadvantage】</strong>
+                <p style="display:flex;"><strong>もっともらしさ</strong>
+                <label>
+                  <input type="radio" name="item2" class="radio" data-item="item2" data-stage="1"> 十分にある
+                </label>
+                <label>
+                  <input type="radio" name="item2" class="radio" data-item="item2" data-stage="2"> 普通
+                </label>
+                <label>
+                  <input type="radio" name="item2" class="radio" data-item="item2" data-stage="3"> 不足している
+                </label>
+              </p>
+                <p style="display:flex;"><strong>価値・重要性</strong>
+                <label>
+                  <input type="radio" name="item2_2" class="radio" data-item="item2_2" data-stage="1"> 十分にある
+                </label>
+                <label>
+                  <input type="radio" name="item2_2" class="radio" data-item="item2_2" data-stage="2"> 普通
+                </label>
+                <label>
+                  <input type="radio" name="item2_2" class="radio" data-item="item2_2" data-stage="3"> 不足している
+                </label>
+              </p>
+                <button id="calculateButton2" disabled>確認する</button>
+                <div id="result2"></div>
+            </div>
+        </div>
+                  
+      </section>
+
+    <script src="left_tab.js"></script>
+</body>
+</html>

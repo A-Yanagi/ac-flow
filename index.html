@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英語ディベートシステム</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div id="title">
+    <span>英語ディベートフローシート for Academic Debate</span>
+    <div class="header-btns">
+      <button onclick="openPopup()" class="btn-partial-line"><i class="fa fa-caret-right"></i>▶はじめに</button>
+      <button id="save-button" class="btn-partial-line"><i class="fa fa-caret-right"></i>▶保存</button>
+      <button onclick="openNewWindow()" class="btn-partial-line"><i class="fa fa-caret-right"></i>▶作成例</button>
+    </div>
+  </div>
+
+  <!-- Popup container -->
+  <div id="popup-container">
+    <div id="popup-content">
+      <button id="close-btn" class="btn-close" onclick="closePopup()">Close</button>
+      <h2 id="page-title">英語ディベートを観てみよう！</h2>
+      <div id="page1-content">
+        <img src="explanation1.jpg" width="550px"> 
+      </div>
+      <div id="page2-content" style="display:none">
+        <img src="explanation2.jpg" width="550px"> 
+      </div>
+      <div id="page3-content" style="display:none">
+      <img src="explanation3.jpg" width="550px">
+      </div>
+      <div class="btn-container">
+        <button id="prev-btn" class="btn" onclick="prevPage()" style="display:none">Previous</button>
+        <button id="next-btn" class="btn" onclick="nextPage()">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+     <span class=video-title>動画＆字幕</span>
+     <div id="video"></div>
+     <div id="caption"></div> 
+     <iframe src="left_tab.html" width="100%" height="240px"></iframe>
+    </div>
+
+    <div class="right">
+      <span class=video-title>フローシート</span>
+      <iframe id="right-flow" src="right.html" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+      
+  <footer>
+    <p>&copy; Aoi YANAGI</p>
+  </footer>
+
+  <script src="program1.js"></script>
+  <script src="Caption.js"></script>
+</body>
